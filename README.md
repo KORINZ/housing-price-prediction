@@ -26,26 +26,31 @@ of the data, and the data size considerably small.
 
 ### 2. Acquiring the data
 
-- 
+- The data of this project is available at: https://github.com/ageron/data/raw/main/housing.tgz.
 
 ### 3. Gaining insight from the data
 
+- 
 
 ### 4. Preprocessing the data
 
+-
 
 ### 5. Choosing a model
 
+-
 
 ### 6. Fine-tuning the model
 
+-
 
 ### 7. Presenting the solution
 
+-
 
 ### 8. Launching, monitoring, and maintaining the system
 
-
+-
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
