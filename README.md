@@ -7,7 +7,8 @@
 </div>
 
 Using California census data (1990) to build a model of housing prices. The data includes 
-longitude, latitude, housing median age, total rooms, total bedrooms, population, households, median income, median house value, and ocean proximity for each district. The model should
+**longitude**, **latitude**, **housing_median_age**, **total_rooms**, **total_bedrooms**, **population**, **households**, 
+**median_income**, **median_house_value**, and **ocean_proximity** for each district. The model should
 learn from this data and be able to predict the median housing price in any district given
 all the other metrics mentioned above.
 
@@ -30,7 +31,17 @@ of the data, and the data size considerably small.
 
 ### 3. Gaining insight from the data
 
-- 
+- Several methods from `pandas` library can be used to take a quick look at the data, such as `head()`, 
+`info()`, `describe()`, and `hist()`.
+- There are some null data in **total_bedrooms** column of the data.
+- Attributes for **ocean_proximity** are categorical instead of numerical.
+- **median_income** are scaled to tens thousands of dollars and is capped from 0.5 to 15.
+- **housing_median_age** is capped at 50 years, 
+and **median_housing_value** is capped at $500,000.
+- These constraints have to be taken into account when making any prediction beyond the capped values.
+If so, the capped values need to be either removed or reevaluated.
+- From histograms, many data are *skewed right*, which can make machine learning algorithms hard
+to detect patterns. A transformation will be needed.
 
 ### 4. Preprocessing the data
 
