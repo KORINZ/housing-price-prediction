@@ -4,6 +4,7 @@ import urllib.request
 from figure_management import FigureManagement
 import numpy as np
 import pandas as pd
+from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 
@@ -49,5 +50,8 @@ figure_3 = housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, 
                         label="population", c="median_house_value", cmap="jet", colorbar=True, legend=True,
                         sharex=False, figsize=(10, 7))  # geographical scatter plot
 FigureManagement.save_fig("median_house_value_scatter_plot")
+
+attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
+scatter_matrix(housing[attributes], figsize=(12, 8))
 
 plt.show()
