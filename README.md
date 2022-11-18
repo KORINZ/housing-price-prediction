@@ -28,8 +28,8 @@ of the data, and the data size considerably small.
 ### 2. Acquiring the data
 
 - The data of this project is available at: https://github.com/ageron/data/raw/main/housing.tgz.
-- Several methods from `pandas` library can be used to take a quick look at the data, such as `head()`, 
-`info()`, `describe()`, and `hist()`.
+- Several methods from `pandas` library can be used to take a quick look at the data, such as `.head()`, 
+`.info()`, `.describe()`, and `.hist()`.
 - There are some null data in **total_bedrooms** column of the data.
 - Attributes for **ocean_proximity** are categorical instead of numerical.
 - **median_income** are scaled to tens thousands of dollars and is capped from 0.5 to 15.
@@ -40,17 +40,19 @@ If so, the capped values need to be either removed or reevaluated.
 - From histograms, many data are *skewed right*, which can make machine learning algorithms hard
 to detect patterns. A transformation will be needed.
 - - To avoid sampling bias, stratified sampling needs to be implemented.
-- `cut` method from `pandas` library is used to create the income category.
-- Creating training and test sets by using `train_test_split` from `sklearn.model_selection` utility.
+- `.cut()` method from `pandas` library is used to create the income category.
+- Creating training and test sets by using `train_test_split()` function from `sklearn.model_selection` utility.
 - 
 
 ### 3. Gaining insight from the data
 
+![median_house_value_scatter_plot](images/end_to_end_project/median_house_value_scatter_plot.png)
 
+- Housing prices are closely related to the location and population density.
 
 ### 4. Preprocessing the data
 
-
+- 
 
 ### 5. Choosing a model
 
