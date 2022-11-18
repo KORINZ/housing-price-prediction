@@ -28,9 +28,6 @@ of the data, and the data size considerably small.
 ### 2. Acquiring the data
 
 - The data of this project is available at: https://github.com/ageron/data/raw/main/housing.tgz.
-
-### 3. Gaining insight from the data
-
 - Several methods from `pandas` library can be used to take a quick look at the data, such as `head()`, 
 `info()`, `describe()`, and `hist()`.
 - There are some null data in **total_bedrooms** column of the data.
@@ -42,10 +39,18 @@ and **median_housing_value** is capped at $500,000.
 If so, the capped values need to be either removed or reevaluated.
 - From histograms, many data are *skewed right*, which can make machine learning algorithms hard
 to detect patterns. A transformation will be needed.
+- - To avoid sampling bias, stratified sampling needs to be implemented.
+- `cut` method from `pandas` library is used to create the income category.
+- Creating training and test sets by using `train_test_split` from `sklearn.model_selection` utility.
+- 
+
+### 3. Gaining insight from the data
+
+
 
 ### 4. Preprocessing the data
 
-- Creating training and test sets.
+
 
 ### 5. Choosing a model
 
