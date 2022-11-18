@@ -5,6 +5,7 @@ from pathlib import Path
 import urllib.request
 from figure_management import FigureManagement
 import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
 
 np.random.seed(42)
 
@@ -25,13 +26,10 @@ housing = load_housing_data()
 housing.hist(bins=50, figsize=(12, 8))
 FigureManagement.save_fig("attribute_histogram_plots")
 
+# generate descriptive statistics of the data
+# print(housing.describe().to_string())
 
-def shuffle_and_split_data(data, test_ratio):
-    shuffled_indices = np.random.permutation(len(data))
-    test_set_size = int(len(data) * test_ratio)
-    test_indices = shuffled_indices[:test_set_size]
-    train_indices = shuffled_indices[test_set_size:]
-    return data.iloc[train_indices], data.iloc[test_indices]
-
+# create training and test sets
+train_set, test_set = train_test_split(housing, test_size=0.2, random_state=42)
 
 plt.show()

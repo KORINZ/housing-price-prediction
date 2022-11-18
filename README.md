@@ -34,7 +34,7 @@ of the data, and the data size considerably small.
 
 ### 4. Preprocessing the data
 
--
+- Creating training and test sets.
 
 ### 5. Choosing a model
 
