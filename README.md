@@ -42,13 +42,15 @@ to detect patterns. A transformation will be needed.
 - - To avoid sampling bias, stratified sampling needs to be implemented.
 - `.cut()` method from `pandas` library is used to create the income category.
 - Creating training and test sets by using `train_test_split()` function from `sklearn.model_selection` utility.
-- 
 
 ### 3. Gaining insight from the data
 
 ![median_house_value_scatter_plot](images/end_to_end_project/median_house_value_scatter_plot.png)
 
 - Housing prices are closely related to the location and population density.
+- The data correlations can be checked with `.corr()` method from `pandas` library and 
+range from -1 (strong negative correlation) to 1 (strong positive correlation).
+- 
 
 ### 4. Preprocessing the data
 
