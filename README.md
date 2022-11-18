@@ -6,7 +6,7 @@
 <h1 align="center"> Housing Price Predication with Machine Learning </h1>
 </div>
 
-Using California census data (1990) to build a model of housing prices. The data includes 
+An end-to-end machine learning project that uses California census data (1990) to build a model of housing prices. The data includes 
 **longitude**, **latitude**, **housing_median_age**, **total_rooms**, **total_bedrooms**, **population**, **households**, 
 **median_income**, **median_house_value**, and **ocean_proximity** for each district. The model should
 learn from this data and be able to predict the median housing price in any district given
