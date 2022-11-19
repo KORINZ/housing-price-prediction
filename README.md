@@ -50,7 +50,7 @@ to detect patterns. A transformation will be needed.
 - Housing prices are closely related to the location and population density.
 - The data's linear correlations can be checked with `.corr()` method from `pandas` library and 
 range from -1 (strong negative correlation) to 1 (strong positive correlation).
-- `scatter_matrix` from `pandas.plotting` utility can also be used to visualize the correlations.
+- `scatter_matrix()` function from `pandas.plotting` utility can also be used to visualize the correlations.
 - The most promising attribute to predict **median_house_value** is found to be **median_income**.
 - **total_rooms** and **total_bedrooms** in a district alone is not useful. More insights may be obtained by dividing them with **households**.
 
