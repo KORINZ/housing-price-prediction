@@ -2,8 +2,8 @@
 
 [![LinkedIn][linkedin-shield]][linkedin-url]
 <!-- PROJECT TITLE -->
-<div align="center">
-<h1 align="center"> Housing Price Predication with Machine Learning </h1>
+<div>
+<h1> Housing Price Predication with Machine Learning </h1>
 </div>
 
 An end-to-end machine learning project that uses California census data (1990) to build a model of housing prices. The data includes 
