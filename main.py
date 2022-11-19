@@ -52,6 +52,6 @@ figure_3 = housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, 
 FigureManagement.save_fig("median_house_value_scatter_plot")
 
 attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
-scatter_matrix(housing[attributes], figsize=(12, 8))
+scatter_matrix(housing[attributes], figsize=(12, 8))  # most promising attribute is median_house_value vs. median_income
 
 plt.show()
