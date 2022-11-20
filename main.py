@@ -7,6 +7,7 @@ import pandas as pd
 from pandas.plotting import scatter_matrix
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
 
 
 def load_housing_data():
@@ -36,7 +37,7 @@ housing["income_cat"].value_counts().sort_index().plot.bar(rot=0, grid=True)
 plt.xlabel("Income Category")
 plt.ylabel("Number of Districts")
 
-# create training and test sets
+# create stratified training and test sets
 strat_train_set, strat_test_set = train_test_split(housing, test_size=0.2, stratify=housing["income_cat"],
                                                    random_state=42)
 
@@ -53,5 +54,18 @@ FigureManagement.save_fig("median_house_value_scatter_plot")
 
 attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
 scatter_matrix(housing[attributes], figsize=(12, 8))  # most promising attribute is median_house_value vs. median_income
+
+# revert to a clean training set
+housing = strat_train_set.drop("median_house_value", axis=1)
+housing_labels = strat_train_set["median_house_value"].copy()
+imputer = SimpleImputer(strategy="median")  # perform imputation based on median value of each attribute
+housing_num = housing.select_dtypes(include=[np.number])  # exclude non-numerical attributes
+imputer.fit(housing_num)
+# print(housing_num.median().values)  # see the imputed median value of each attribute
+
+# transform the training set with median values
+X = imputer.transform(housing_num)
+housing_tr = pd.DataFrame(X, columns=housing_num.columns, index=housing_num.index)
+
 
 plt.show()
