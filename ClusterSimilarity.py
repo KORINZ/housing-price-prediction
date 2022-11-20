@@ -5,6 +5,7 @@ from sklearn.metrics.pairwise import rbf_kernel
 
 class ClusterSimilarity(BaseEstimator, TransformerMixin):
     def __init__(self, n_clusters=10, gamma=1.0, random_state=None):
+        self.kmeans_ = None
         self.n_clusters = n_clusters
         self.gamma = gamma
         self.random_state = random_state
