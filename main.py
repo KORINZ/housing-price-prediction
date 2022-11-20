@@ -38,10 +38,6 @@ FigureManagement.save_fig("attribute_histogram_plots")
 # stratify sampling sets
 housing["income_cat"] = pd.cut(housing["median_income"], bins=[0., 1.5, 3.0, 4.5, 6., np.inf],
                                labels=[1, 2, 3, 4, 5])
-figure_2 = plt.figure(2)
-housing["income_cat"].value_counts().sort_index().plot.bar(rot=0, grid=True)
-plt.xlabel("Income Category")
-plt.ylabel("Number of Districts")
 
 # create stratified training and test sets
 strat_train_set, strat_test_set = train_test_split(housing, test_size=0.2, stratify=housing["income_cat"],
@@ -53,13 +49,13 @@ for set_ in (strat_train_set, strat_test_set):
 
 # exploring training set
 housing = strat_train_set.copy()
-figure_3 = housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, s=housing["population"] / 100,
+figure_2 = housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, s=housing["population"] / 100,
                         label="population", c="median_house_value", cmap="jet", colorbar=True, legend=True,
                         sharex=False, figsize=(10, 7))  # geographical scatter plot
 FigureManagement.save_fig("median_house_value_scatter_plot")
 
 attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
-scatter_matrix(housing[attributes], figsize=(12, 8))  # most promising attribute is median_house_value vs. median_income
+figure_3 = scatter_matrix(housing[attributes], figsize=(12, 8))  # most promising attribute is median_house_value vs. median_income
 
 # revert to a clean training set
 housing = strat_train_set.drop("median_house_value", axis=1)
@@ -88,7 +84,7 @@ housing_renamed = housing.rename(columns={
     "median_house_value": "Median house value (ᴜsᴅ)"})
 housing_renamed["Max cluster similarity"] = similarities.max(axis=1)
 
-housing_renamed.plot(kind="scatter", x="Longitude", y="Latitude", grid=True,
+figure_4 = housing_renamed.plot(kind="scatter", x="Longitude", y="Latitude", grid=True,
                      s=housing_renamed["Population"] / 100, label="Population",
                      c="Max cluster similarity",
                      cmap="jet", colorbar=True,
