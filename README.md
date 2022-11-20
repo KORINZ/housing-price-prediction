@@ -59,7 +59,9 @@ range from -1 (strong negative correlation) to 1 (strong positive correlation).
 - Preforming imputation on **total_bedrooms** as it has some missing data. This is done by
 using `SimpleImputer()` function from `sklearn.impute` package.
 - The imputed data (median values) is then transformed to the training set.
-- 
+- Converting the categorical attribute of **ocean_proximity** to numerical values
+by using `OneHotEncoder` class from `sklearn.preprocessing` package.
+- Scaling data  
 
 ### 5. Choosing a model
 
