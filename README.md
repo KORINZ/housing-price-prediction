@@ -41,7 +41,7 @@ If so, the capped values need to be either removed or reevaluated.
 to detect patterns. A transformation will be needed.
 - - To avoid sampling bias, stratified sampling needs to be implemented.
 - `.cut()` method from `pandas` library is used to create the income category.
-- Creating training and test sets by using `train_test_split()` function from `sklearn.model_selection` utility.
+- Creating training and test sets by using `train_test_split()` function from `sklearn.model_selection` package.
 
 ### 3. Gaining insight from the data
 
@@ -50,29 +50,32 @@ to detect patterns. A transformation will be needed.
 - Housing prices are closely related to the location and population density.
 - The data's linear correlations can be checked with `.corr()` method from `pandas` library and 
 range from -1 (strong negative correlation) to 1 (strong positive correlation).
-- `scatter_matrix()` function from `pandas.plotting` utility can also be used to visualize the correlations.
+- `scatter_matrix()` function from `pandas.plotting` package can also be used to visualize the correlations.
 - The most promising attribute to predict **median_house_value** is found to be **median_income**.
 - **total_rooms** and **total_bedrooms** in a district alone is not useful. More insights may be obtained by dividing them with **households**.
 
 ### 4. Preprocessing the data
 
+- Preforming imputation on **total_bedrooms** as it has some missing data. This is done by
+using `SimpleImputer()` function from `sklearn.impute` package.
+- The imputed data (median values) is then transformed to the training set.
 - 
 
 ### 5. Choosing a model
 
--
+- 
 
 ### 6. Fine-tuning the model
 
--
+- 
 
 ### 7. Presenting the solution
 
--
+- 
 
 ### 8. Launching, monitoring, and maintaining the system
 
--
+- 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
