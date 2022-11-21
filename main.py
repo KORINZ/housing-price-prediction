@@ -55,7 +55,8 @@ figure_2 = housing.plot(kind="scatter", x="longitude", y="latitude", grid=True, 
 FigureManagement.save_fig("median_house_value_scatter_plot")
 
 attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
-figure_3 = scatter_matrix(housing[attributes], figsize=(12, 8))  # most promising attribute is median_house_value vs. median_income
+figure_3 = scatter_matrix(housing[attributes],
+                          figsize=(12, 8))  # most promising attribute is median_house_value vs. median_income
 
 # revert to a clean training set
 housing = strat_train_set.drop("median_house_value", axis=1)
@@ -85,10 +86,10 @@ housing_renamed = housing.rename(columns={
 housing_renamed["Max cluster similarity"] = similarities.max(axis=1)
 
 figure_4 = housing_renamed.plot(kind="scatter", x="Longitude", y="Latitude", grid=True,
-                     s=housing_renamed["Population"] / 100, label="Population",
-                     c="Max cluster similarity",
-                     cmap="jet", colorbar=True,
-                     legend=True, sharex=False, figsize=(10, 7))
+                                s=housing_renamed["Population"] / 100, label="Population",
+                                c="Max cluster similarity",
+                                cmap="jet", colorbar=True,
+                                legend=True, sharex=False, figsize=(10, 7))
 plt.plot(cluster_simil.kmeans_.cluster_centers_[:, 1],
          cluster_simil.kmeans_.cluster_centers_[:, 0],
          linestyle="", color="black", marker="X", markersize=20,
