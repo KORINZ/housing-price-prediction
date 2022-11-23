@@ -1,6 +1,7 @@
 <a name="readme-top"></a>
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
+[![LinkedIn][linkedin-shield]][linkedin-url] [![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
 <!-- PROJECT TITLE -->
 <div>
 <h1> Housing Price Predication with Machine Learning </h1>
