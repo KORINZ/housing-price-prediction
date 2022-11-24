@@ -66,6 +66,8 @@ by using `OneHotEncoder` class from `sklearn.preprocessing` package.
 
 ### 5. Choosing a model
 
+- Choosing `linearRegression` model from `sklearn.linear_model` package.
+- The model's performance is evaluated with `mean_squared_error()` function from `sklearn.metrics` package.
 - 
 
 ### 6. Fine-tuning the model
