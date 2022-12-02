@@ -32,7 +32,7 @@ housing = load_housing_data()
 figure_1 = housing.hist(bins=50, figsize=(12, 8))
 FigureManagement.save_fig("attribute_histogram_plots")
 
-# generate descriptive statistics of the data
+# uncomment next line to print descriptive statistics of the data
 # print(housing.describe().to_string())
 
 # stratify sampling sets
