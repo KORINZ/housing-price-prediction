@@ -64,7 +64,6 @@ housing_labels = strat_train_set["median_house_value"].copy()
 imputer = SimpleImputer(strategy="median")  # perform imputation based on median value of each attribute
 housing_num = housing.select_dtypes(include=[np.number])  # exclude non-numerical attributes
 imputer.fit(housing_num)
-# print(housing_num.median().values)  # see the imputed median value of each attribute
 
 # transform the training set with median values
 X = imputer.transform(housing_num)
@@ -82,7 +81,7 @@ similarities = cluster_simil.fit_transform(housing[["latitude", "longitude"]], s
 housing_renamed = housing.rename(columns={
     "latitude": "Latitude", "longitude": "Longitude",
     "population": "Population",
-    "median_house_value": "Median house value (ᴜsᴅ)"})
+    "median_house_value": "Median house value (USD)"})
 housing_renamed["Max cluster similarity"] = similarities.max(axis=1)
 
 figure_4 = housing_renamed.plot(kind="scatter", x="Longitude", y="Latitude", grid=True,
